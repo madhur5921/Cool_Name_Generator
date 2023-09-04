@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="styles/index.css">
+
+<%- include ("partials/header.ejs") %> <!--Add Header -->
+
+
+<!--If an adjective and noun are sent to this ejs file, 
+    Change the h1 to show the adjective and noun.
+    But when the user first goes on the website and there is no adjective and noun, 
+    Show the default h1 below -->
+
+    <h1>Generate Cool Names For your Group😎</h1>
+    
+<% if(locals.First_Name && locals.Last_Name){ %>
+
+  <h1><%= First_Name %> <%= Last_Name %></h1>
+
+  <% } else { %>
+
+    
+
+    <% } %>
+
+    
+
+  <form action="/submit" method="POST">
+<input class="button" type="submit" value="Generate Name">
+</form>
+
+<%- include ("partials/footer.ejs") %><!--Add Footer -->
